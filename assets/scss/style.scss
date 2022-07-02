@@ -28,11 +28,12 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Roboto:wght@100;300&display=swap');
 
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-grey: #666666;
-$color-yellow: #ffcf19;
 
 body {
     font-weight: 300;
@@ -60,58 +61,18 @@ img {
 .bg-contain {
     background-size: contain;
 }
-.px-50 {
-    padding: 0 50px;
+.bg-grey {
+    background-color: #f9f9f9;
 }
-
 .heading-default {
-    position: relative;
-    font-size: 36px;
-    margin: 0 auto 50px;
-    font-family: "Abril Fatface",cursive;
-    font-weight: 700;
-    text-align: center;
-    display: table;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    z-index: 1;
-    span {
-        z-index: 0;
-        margin: -5px 10px 0 0;
-        -webkit-text-fill-color: rgb(0 0 0 / 0%);
-        -webkit-text-stroke: 1px #d3d3d3;
-        position: relative;
-    }
-    &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        height: 0;
-        left: -15px;
-        right: -15px;
-        background-color: #f2eee3;
-        z-index: -1;
-        transition-delay: 1s;
-        transition: height 1.5s ease;
-    }
+
     &.is-on {
-        &:after {
-            height: 20px;
-        }
     }
 }
 .heading-default__small {
-    font-size: 18px;
-    span {
-        margin: 0 -10px 0px 0;
-        font-size: 54px;
-        color: #f2eee3;
-        font-weight: 700;
-        position: relative;
-        top: 5px;
-        z-index: -1;
-    }
+
 }
+
 
 /* End Theme Default CSS */
 
@@ -172,354 +133,44 @@ img {
     background-size: cover;
     background-position: center bottom;
     color: $color-white;
-
     z-index: 5;
     overflow: hidden;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #0000004f;
-        z-index: -1;
-    }
     .header__logo {
-        img {
-            width: 100px;
-            border: 1px solid $color-white;
-            padding: 7px 18px;
-        }
-    }
-    .header__avatar {
-        width: 100px;
-    }
-    .header__button--nav {
-        padding: 8px;
-        cursor: pointer;
-        display: inline-flex;
-        span {
-            margin: 0 8px;
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background-color: $color-white;
-            border-radius: 50%;
-            transition: margin 0.2s ease;
-        }
-        &:hover {
-            span {
-                margin: 0 10px;
-            }
-        }
+        font-weight: 100;
+        font-size: 150px;
+        font-family: 'Bungee Hairline', cursive;
     }
     .header__nav {
-        margin: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: height 0.6s ease;
-        transition-delay: 0.3s;
-        height: 0;
-        background-color: $color-white;
         .header__navigation {
-            opacity: 0;
-            visibility: hidden;
-            transition-delay: 1s;
-            transition: all 1s ease;
-            -moz-transition-duration: 1s;
-            -webkit-transition-duration: 1s;
-            transition-duration: 1s;
             li {
                 a {
                     margin: 10px 0;
                     color: $color-black;
+                    font-weight: 300;
                     text-transform: uppercase;
-                    font-weight: 400;
-                    font-size: 16px;
-                    transition: color 0.3s ease;
-                    &.active, &:hover {
-                        color: #e3cd92;
-                    }
-                }
-            }
-            .nav-open-js & {
-                opacity: 1;
-                visibility: visible;
-                transition-delay: 1.2s;
-            }
-        }
-        .nav-open-js & {
-            height: 100%;
-            z-index: 5;
-        }
-        a.header__button--close {
-            margin: 10px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: absolute;
-            bottom: 20%;
-            opacity: 0;
-            visibility: hidden;
-            transition-delay: 1s;
-            transition: all 1s ease;
-            -moz-transition-duration: 1s;
-            -webkit-transition-duration: 1s;
-            transition-duration: 1s;
-            &:after {
-                content: '';
-                width: 30px;
-                height: 2px;
-                background-color: $color-grey;
-                display: block;
-                transform: rotate(-45deg);
-                position: absolute;
-                transition: background-color 0.5s ease;
-            }
-            &:before {
-                content: '';
-                width: 30px;
-                height: 2px;
-                background-color: $color-grey;
-                display: block;
-                transform: rotate(45deg);
-                position: absolute;
-                transition: background-color 0.5s ease;
-            }
-            .nav-open-js & {
-                opacity: 1;
-                visibility: visible;
-                transition-delay: 1.2s;
-            }
-            &:hover {
-                &:before {
-                    background-color: $color-black;
-                }
-                &:after {
-                    background-color: $color-black;
+                    font-size: 14px;
+                    font-family: 'Roboto', sans-serif;
                 }
             }
         }
-    }
-
-    // Page 1
-    .home-1 & {
-        -webkit-animation: bg-move 50s infinite;
-        animation: bg-move 50s infinite;
-    }
-
-    // Page 2
-    .video-bg {
-        iframe {
-            position: absolute;
-            z-index: -1;
-            width: 400%;
-            height: 100%;
-            left: -150%;
-            right: -150%;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-        }
-    }
-
-    // Page 3
-    .header__particles {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -2;
-    }
-
-    &.header--slider {
-        transition-delay: 2s;
-        transition: all 2s ease;
-    }
-
-}
-@-webkit-keyframes bg-move {
-    0% {
-        background-position: left;
-    }
-    30% {
-        background-position: right;
-    }
-    60% {
-        background-position: left;
-    }
-    100% {
-        background-position: right;
-    }
-}
-@keyframes bg-move {
-    0% {
-        background-position: left;
-    }
-    30% {
-        background-position: right;
-    }
-    60% {
-        background-position: left;
-    }
-    100% {
-        background-position: right;
     }
 }
 /** 3. End Header **/
 
 /** 4. Start About me **/
 .about-me {
-    .about-me__avatar {
-        position: relative;
-        &:after {
-            content: '';
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-color: #f6f6f6;
-            position: absolute;
-            z-index: -1;
-            transition-delay: 2.5s;
-            transition: all 2.5s ease;
-        }
-        &.is-on {
-            &:after {
-                left: -80px;
-                right: 80px;
-                top: 80px;
-                bottom: -80px;
-            }
-        }
-    }
-    .about-me__item {
-        width: 33.33333%;
-        .about-me__title {
-            letter-spacing: 2px;
-        }
-    }
+
 }
 /** 4. End About me **/
 
 /** 5. Start My Resume **/
 .my-resume {
-    .my-resume__skill {
-        .my-resume__skill--item {
-            margin: 0 0 20px;
-            label {
-                margin: 0 0 5px;
-                font-weight: 500;
-                font-size: 15px;
-            }
-            > div {
-                width: 100%;
-                height: 10px;
-                background-color: #f2eee3;
-                position: relative;
-                border-radius: 10px;
-                > div {
-                    display: block;
-                    height: 10px;
-                    width: 0;
-                    border-radius: 10px;
-                    background-color: #cdcdcd;
-                    transition-delay: 1s;
-                    transition: width 1.5s ease;
-                }
-                .count {
-                    position: absolute;
-                    top: -25px;
-                    right: 0;
-                    opacity: 0;
-                    transition-delay: 1s;
-                    transition: opacity 1s ease;
-                    font-weight: 500;
-                    font-size: 14px;
-                }
-            }
-            &.is-on {
-                @for $i from 0 through 100 {
-                    .width-#{$i + 10} {
-                        width: #{$i+10}#{"%"};
-                    }
-                }
-                .count {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-    .education__list {
-        .education__item {
-            border-top: 2px solid #f6f6f6;
-            padding: 30px 0;
-            .education__item--left {
-                width: 35%;
-                .education__date {
-                    font-weight: 500;
-                }
-            }
-            .education__item--right {
-                width: 65%;
-            }
-        }
-    }
 
-    .experience__list {
-        .experience__item {
-            border-top: 2px solid #f6f6f6;
-            padding: 30px 0;
-            .experience__item--left {
-                width: 35%;
-                .experience__date {
-                    font-weight: 500;
-                }
-            }
-            .experience__item--right {
-                width: 65%;
-            }
-        }
-    }
-
-    .awards__list {
-        .awards__item {
-            border-top: 2px solid #f6f6f6;
-            padding: 30px 0;
-            .awards__item--left {
-                width: 35%;
-                .awards__date {
-                    font-weight: 500;
-                }
-            }
-            .awards__item--right {
-                width: 65%;
-            }
-        }
-    }
 }
 /** 5. End My Resume **/
 
 /** 6. Start My Project **/
 .my-project {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #f8f8f8;
-    .heading-default {
-        margin: 0 auto 30px !important;
-    }
     .my-project__nav {
         li {
             margin: 5px;
@@ -567,60 +218,6 @@ img {
         }
     }
     .project__list {
-        margin: 0 -15px;
-        display: flex;
-        flex-wrap: wrap;
-        .product__item {
-            padding: 15px;
-            width: 50%;
-            .product__item--inner {
-                padding: 20px;
-                background-color: $color-white;
-                transition: all 0.5s ease;
-                figure {
-                    margin: 0;
-                    position: relative;
-                    background-size: cover;
-                    transition: all 1s ease;
-
-                    .product__view {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: $color-white;
-                        transform: scale(0);
-                        transition: all 1s ease;
-                        a {
-                            width: 50px;
-                            height: 50px;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50%;
-                            font-size: 16px;
-                            background-color: $color-white;
-                            color: $color-black;
-                        }
-                    }
-                }
-                .product__content {
-                    padding: 20px 0;
-                    text-align: center;
-                    transition: all 1s ease;
-                    .product__name {
-                        font-family: "Noto Serif Display",serif;
-                        font-weight: 700;
-                    }
-                }
-                &:hover {
-                    box-shadow: 10px 10px #f2f2f2;
-                    .product__view {
-                        transform: scale(1);
-                    }
-                }
-            }
-
-        }
     }
 }
 /** 6. End My Project **/
@@ -645,60 +242,11 @@ img {
 
 /** 8. Start My Blog **/
 .my-blog {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #f8f8f8;
+
     .my-blog__list {
         margin: 0 -15px;
         display: flex;
         flex-wrap: wrap;
-        .my-blog__items {
-            padding: 0 15px 30px;
-            width: 33.3333%;
-            .my-blog__items--inner {
-                padding: 20px;
-                height: 100%;
-                background-color: $color-white;
-                transition: all .5s ease;
-                cursor: pointer;
-                .my-blog__items--content {
-                    padding: 30px 0;
-                    text-align: center;
-                    .entry {
-                        margin: 0 0 15px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-direction: column;
-                        .entry__category {
-                            margin: 0 0 5px;
-                            text-transform: uppercase;
-                            font-size: 14px;
-                            font-weight: 500;
-                        }
-                        .entry__date {
-                            font-size: 14px;
-                            color: #666;
-                        }
-                    }
-                    .my-blog__detail {
-                        cursor: pointer;
-                    }
-                    figure {
-                        transition: all 0.5s ease;
-                    }
-                    h3 {
-                        margin: 0;
-                        font-size: 18px;
-                        font-weight: 500;
-                    }
-
-                }
-                &:hover {
-                    box-shadow: 10px 10px #f2f2f2;
-                }
-            }
-        }
     }
     .my-blog__pagination {
         margin: 30px 0 0;
@@ -711,38 +259,6 @@ img {
             .current {
                 font-weight: 400;
                 text-decoration: underline;
-            }
-        }
-    }
-    .my-blog__button {
-        a {
-            padding: 5px 15px;
-            background: $color-white;
-            font-weight: 300;
-            color: $color-black;
-            border: 1px solid $color-black;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            z-index: 1;
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 0;
-                z-index: -1;
-                background-color: $color-black;
-                transition: height .3s ease;
-            }
-            &:hover  {
-                text-decoration: none;
-                color: $color-white;
-                &:after {
-                    height: 100%;
-                }
             }
         }
     }
@@ -1301,78 +817,6 @@ img {
 body.my-blog__popup--js {
     overflow: hidden;
 }
-.toggle-menu {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    border: 1px solid transparent;
-    padding: 10px 15px;
-    transition: all 1s ease-in-out;
-    .nav-open-js & {
-        border-color: $color-black;
-    }
-    .fa-navicon__custom {
-        position: relative;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        &:before {
-            content: '';
-            width: 25px;
-            height: 2px;
-            display: block;
-            background-color: $color-black;
-            position: absolute;
-            top: 3px;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            .nav-open-js & {
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-                top: 11px;
-            }
-        }
-        &:after {
-            content: '';
-            width: 25px;
-            height: 2px;
-            display: block;
-            background-color: $color-black;
-            position: absolute;
-            bottom: 3px;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            .nav-open-js & {
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
-                -ms-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-                bottom: 12px;
-            }
-        }
-        i {
-            height: 2px;
-            width: 25px;
-            display: block;
-            background-color: $color-black;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            .nav-open-js & {
-                opacity: 0;
-            }
-        }
-    }
-}
 .social {
     padding: 20px 0 0;
     margin: 20px 0 0;
@@ -1386,12 +830,10 @@ body.my-blog__popup--js {
             width: 32px;
             height: 32px;
             display: inline-flex;
-            border: 1px solid $color-white;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
             font-size: 14px;
-            color: $color-white;
+            color: $color-black;
             transition: all 0.3s ease;
             &:hover {
                 text-decoration: none;
@@ -1425,38 +867,6 @@ body.my-blog__popup--js {
     }
 
 }
-.highlight {
-    margin: 0 0 0 1px;
-    padding: 15px 0;
-    border-left: 1px solid $color-grey;
-    .highlight__item {
-        padding: 0 0 0 32px;
-        position: relative;
-        &:before {
-            content: '';
-            width: 9px;
-            height: 9px;
-            display: inline-block;
-            position: absolute;
-            left: -5px;
-            top: 5px;
-            border: 1px solid $color-black;
-            background-color: $color-white;
-            opacity: 1;
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-            transition: background-color 0.5s ease;
-        }
-    }
-}
-.entry {
-    .entry__category {
-        font-weight: 400;
-    }
-}
 .to-top {
     transform: translateY(25px);
     transition: all 1.5s ease;
@@ -1470,24 +880,6 @@ body.my-blog__popup--js {
     transition: opacity 1.5s ease;
     opacity: 0;
     &.is-on {
-        opacity: 1;
-    }
-}
-.custom-text {
-    transform: translate(-35px, 0);
-    transition: all 1.5s ease;
-    opacity: 0;
-    &.is-on {
-        transform: translate(0px);
-        opacity: 1;
-    }
-}
-.to-bottom {
-    transform: translateY(-25px);
-    transition: all 1.5s ease;
-    opacity: 0;
-    &.is-on {
-        transform: translateY(0px);
         opacity: 1;
     }
 }

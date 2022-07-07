@@ -30,6 +30,7 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap');
 
 $color-white: #FFFFFF;
 $color-black: #000000;
@@ -38,7 +39,7 @@ $color-grey: #666666;
 body {
     font-weight: 300;
     background-color: $color-white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     transition: all 0.5s ease;
 }
 ::selection {
@@ -68,21 +69,20 @@ img {
     padding: 0 50px;
 }
 .heading-default {
-    margin: 0 0 50px;
+    margin: 0 0 30px;
     text-transform: uppercase;
     text-align: center;
     position: relative;
     color: $color-black;
-    font-weight: 500;
-    font-family: "Roboto",sans-serif;
-    font-size: 18px;
-    &:after {
-        margin: 15px auto 0;
-        content: '';
-        width: 80px;
-        height: 1px;
+    font-weight: 600;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 24px;
+    span {
+        margin: 10px 0 0;
         display: block;
-        background-color: $color-black;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 5px;
     }
     &.is-on {
     }
@@ -183,9 +183,8 @@ img {
                     font-weight: 400;
                     text-transform: uppercase;
                     font-size: 14px;
-                    font-family: 'Roboto', sans-serif;
-                    display: flex;
-                    align-items: center;
+                    font-family: 'Red Hat Display', sans-serif;
+                    text-align: center;
                     &:after {
                         margin: 25px 0 0 15px;
                         content: '';
@@ -221,6 +220,7 @@ img {
         height: 100%;
         display: flex;
         align-items: center;
+        position: relative;
         .header__avatar {
             margin: 0 auto 50px !important;
             width: 100px;
@@ -246,6 +246,24 @@ img {
 
 /** 5. Start My Resume **/
 .my-resume {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    &:before, &:after {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
+    &:after {
+        top: inherit;
+        bottom: 0;
+    }
     .heading-default {
         margin: 0 0 10px;
     }
@@ -393,6 +411,70 @@ img {
         }
     }
     .project__list {
+        margin-right: calc(-0.5*var(--bs-gutter-x));
+        margin-left: calc(-0.5*var(--bs-gutter-x));
+        display: flex;
+        flex-wrap: wrap;
+        .product__item {
+            padding: 15px;
+            width: 50%;
+            figure {
+                margin: 0;
+                position: relative;
+                background-size: cover;
+                filter: grayscale(100%);
+                transition: all 1s ease;
+                .product__content {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #0000004d;
+                    color: $color-white;
+                    transform: scale(1);
+                    transition: all 1s ease;
+                    .product__name {
+                        font-family: "Noto Serif Display",serif;
+                    }
+                }
+                .product__view {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $color-white;
+                    transform: scale(0);
+                    transition: all 1s ease;
+                    a {
+                        width: 50px;
+                        height: 50px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        font-size: 16px;
+                        background-color: $color-white;
+                        color: $color-black;
+                    }
+                }
+            }
+            &:hover {
+                figure {
+                    filter: grayscale(0%);
+                }
+                .product__content {
+                    background-color: transparent;
+                    transform: scale(0);
+                }
+                .product__view {
+                    transform: scale(1);
+                }
+            }
+        }
     }
 }
 /** 6. End My Project **/
@@ -422,6 +504,53 @@ img {
         margin: 0 -15px;
         display: flex;
         flex-wrap: wrap;
+        .my-blog__items {
+            padding: 0 15px 30px;
+            width: 33.3333%;
+            .my-blog__items--inner {
+                padding: 20px;
+                height: 100%;
+                background-color: $color-white;
+                transition: all .5s ease;
+                cursor: pointer;
+                .my-blog__items--content {
+                    padding: 30px 0;
+                    text-align: center;
+                    .entry {
+                        margin: 0 0 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        .entry__category {
+                            margin: 0 0 5px;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                        .entry__date {
+                            font-size: 14px;
+                            color: #666;
+                        }
+                    }
+                    .my-blog__detail {
+                        cursor: pointer;
+                    }
+                    figure {
+                        transition: all 0.5s ease;
+                    }
+                    h3 {
+                        margin: 0;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                }
+                &:hover {
+                    box-shadow: 10px 10px #f2f2f2;
+                }
+            }
+        }
     }
     .my-blog__pagination {
         margin: 30px 0 0;
@@ -434,6 +563,38 @@ img {
             .current {
                 font-weight: 400;
                 text-decoration: underline;
+            }
+        }
+    }
+    .my-blog__button {
+        a {
+            padding: 5px 15px;
+            background: $color-white;
+            font-weight: 300;
+            color: $color-black;
+            border: 1px solid $color-black;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 0;
+                z-index: -1;
+                background-color: $color-black;
+                transition: height .3s ease;
+            }
+            &:hover  {
+                text-decoration: none;
+                color: $color-white;
+                &:after {
+                    height: 100%;
+                }
             }
         }
     }

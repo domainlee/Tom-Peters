@@ -8,20 +8,21 @@ const JS_DIR = ASSETS_DIR + '/js';
 const CSS_DIR = ASSETS_DIR + '/scss';
 
 const config = {
-    entry : [
-        NODE_MODULES + '/owl.carousel/dist/owl.carousel.min.js',
-        JS_DIR + '/jquery.validate.min.js',
-        JS_DIR + '/jquery.magnific-popup.js',
-        JS_DIR + '/modernizr-3.11.2.min.js',
-        JS_DIR + '/jquery.lazy.min.js',
-        JS_DIR + '/particles.min.js',
-        JS_DIR + '/main.js',
-        CSS_DIR + '/main.scss',
-        NODE_MODULES + '/font-awesome/scss/font-awesome.scss',
-    ],
+    entry : {
+        main: [
+            NODE_MODULES + '/owl.carousel/dist/owl.carousel.min.js',
+            JS_DIR + '/jquery.validate.min.js',
+            JS_DIR + '/jquery.magnific-popup.js',
+            JS_DIR + '/modernizr-3.11.2.min.js',
+            JS_DIR + '/jquery.lazy.min.js',
+            JS_DIR + '/particles.min.js',
+            JS_DIR + '/main.js',
+        ],
+        '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss']
+    },
     output : {
-        filename : 'main.bundle.js',
-        chunkFilename: 'main.bundle.js',
+        filename : '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path : BUILD_DIR + '/js/',
     },
     module: {
@@ -54,7 +55,7 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "../css/main.min.css",
+            filename: "../css/[name].min.css",
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',

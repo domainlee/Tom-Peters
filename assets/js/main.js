@@ -73,7 +73,7 @@
             lazyLoad: true,
             autoplay: true,
             items: 1,
-            navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+            navText : ["<i class='icofont-thin-left'></i>","<i class='icofont-thin-right'></i>"],
             responsive: {
                 0: {
                     nav: false,

@@ -1,5 +1,5 @@
 /*
-Theme Name: Lewis
+Theme Name: Tom-Peters
 Author: domainlee
 Support: domainlee.niit@gmail.com
 Description: Template personal for blog , my cv, resume ...
@@ -63,7 +63,7 @@ img {
     background-size: contain;
 }
 .bg-grey {
-    background-color: #f3f3f3;
+    background-color: #f7f7f7;
 }
 .px-50 {
     padding: 0 50px;
@@ -362,8 +362,80 @@ img {
 }
 /** 5. End My Resume **/
 
+/** 6. Start My Service **/
+.my-service {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &:before, &:after {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
+    &:after {
+        top: inherit;
+        bottom: 0;
+    }
+    .my-service__list {
+        margin: 50px -15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        .my-service__item {
+            margin: 0 0 50px;
+            padding: 0 15px;
+            width: 33.33333%;
+            text-align: center;
+            i {
+                font-size: 38px;
+            }
+            .my-service__title {
+                margin: 15px 0 20px;
+                font-size: 15px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                &:after {
+                    margin: 10px auto 0;
+                    content: "";
+                    width: 20px;
+                    height: 3px;
+                    display: block;
+                    background-color: $color-black;
+                }
+            }
+            .my-service__intro {
+
+            }
+        }
+    }
+}
+/** 6. End My Service **/
+
 /** 6. Start My Project **/
 .my-project {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &:before, &:after {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
+    &:after {
+        top: inherit;
+        bottom: 0;
+    }
     .my-project__nav {
         li {
             margin: 5px;
@@ -481,6 +553,24 @@ img {
 
 /** 7. Start My Client **/
 .my-client {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &:before, &:after {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
+    &:after {
+        top: inherit;
+        bottom: 0;
+    }
     .my-client__list {
         .my-client__item {
             text-align: center;

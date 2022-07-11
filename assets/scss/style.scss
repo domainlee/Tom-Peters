@@ -400,10 +400,10 @@ img {
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 &:after {
-                    margin: 10px auto 0;
+                    margin: 15px auto 0;
                     content: "";
                     width: 20px;
-                    height: 3px;
+                    height: 1px;
                     display: block;
                     background-color: $color-black;
                 }
@@ -589,7 +589,24 @@ img {
 
 /** 8. Start My Blog **/
 .my-blog {
-
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &:before, &:after {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
+    &:after {
+        top: inherit;
+        bottom: 0;
+    }
     .my-blog__list {
         margin: 0 -15px;
         display: flex;
@@ -598,13 +615,12 @@ img {
             padding: 0 15px 30px;
             width: 33.3333%;
             .my-blog__items--inner {
-                padding: 20px;
                 height: 100%;
-                background-color: $color-white;
                 transition: all .5s ease;
                 cursor: pointer;
+                @extend .bg-grey;
                 .my-blog__items--content {
-                    padding: 30px 0;
+                    padding: 30px 30px 40px;
                     text-align: center;
                     .entry {
                         margin: 0 0 15px;
@@ -658,33 +674,19 @@ img {
     }
     .my-blog__button {
         a {
-            padding: 5px 15px;
+            padding: 7px 0;
             background: $color-white;
-            font-weight: 300;
             color: $color-black;
-            border: 1px solid $color-black;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid $color-black;
+            transition: all .3s ease;
             cursor: pointer;
             position: relative;
             z-index: 1;
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 0;
-                z-index: -1;
-                background-color: $color-black;
-                transition: height .3s ease;
-            }
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
             &:hover  {
-                text-decoration: none;
-                color: $color-white;
-                &:after {
-                    height: 100%;
-                }
             }
         }
     }
@@ -749,6 +751,20 @@ img {
 
 /** 9. Start Contact **/
 .contact {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &:before {
+        content: '';
+        margin: 0 auto;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-black;
+    }
     .contact__maps {
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
@@ -1319,8 +1335,8 @@ body.my-blog__popup--js {
         .owl-nav {
             button {
                 position: absolute;
-                top: 35%;
-                color: #CCC !important;
+                top: 30%;
+                color: #333 !important;
                 font-size: 36px !important;
                 transition: all 0.5s ease;
                 &.owl-prev {

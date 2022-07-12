@@ -613,18 +613,21 @@ img {
         flex-wrap: wrap;
         .my-blog__items {
             padding: 0 15px 30px;
-            width: 33.3333%;
+            width: 50%;
             .my-blog__items--inner {
-                padding: 20px;
                 height: 100%;
                 transition: all .5s ease;
                 cursor: pointer;
-                border: 1px solid $color-black;
+                background-color: #f7f7f7;
                 .my-blog__items--content {
-                    padding: 30px;
+                    margin: -50px 50px 0;
+                    padding: 50px;
                     text-align: center;
+                    background-color: #f7f7f7;
+                    z-index: 2;
+                    position: relative;
                     .entry {
-                        margin: 0 0 15px;
+                        margin: 15px 0 0;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -654,7 +657,7 @@ img {
 
                 }
                 &:hover {
-                    box-shadow: 10px 10px #f2f2f2;
+                    box-shadow: 10px 10px #dcdcdc;
                 }
             }
         }
@@ -774,65 +777,101 @@ img {
         margin: 80px 0 0;
         .contact__item {
             i {
-                margin: 0 15px 0 0;
-                font-size: 22px;
-                width: 55px;
-                height: 55px;
-                display: inline-flex;
-                border: 1px solid;
-                align-items: center;
-                justify-content: center;
+                margin: 0 auto 15px;
+                font-size: 38px;
+                display: block;
+                color: $color-black;
+            }
+            span {
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: uppercase;
             }
         }
     }
     .contact__form {
-        .form__item {
-            margin: 0 0 30px;
-            label {
-                margin: 0 0 10px;
-                display: block;
-                font-weight: 400;
-                &.error {
-                    color: #bc8787;
-                    margin: 5px 0 0 !important;
-                    font-style: italic;
-                    font-size: 13px;
+        .form__row {
+            margin: 0 -10px;
+            display: flex;
+            .form__item {
+                margin: 0 10px 30px;
+                flex: 1;
+                label {
+                    margin: 0 0 10px;
+                    display: block;
+                    font-weight: 400;
+                    &.error {
+                        color: #bc8787;
+                        margin: 5px 0 0 !important;
+                        font-style: italic;
+                        font-size: 13px;
+                    }
+                }
+                input, textarea {
+                    padding: 10px 15px;
+                    width: 100%;
+                    border: 1px solid $color-black;
+                    background-color: transparent;
+                    border-radius: 0;
+                    -webkit-appearance: none;
+                    transition: all .3s ease;
+                    &:focus {
+                        outline: none;
+                        box-shadow: 5px 5px #d8d8d8;
+                    }
+                    &.error {
+                        box-shadow: 3px 3px #bc8787;
+                    }
+                }
+                textarea {
+                    height: 200px;
                 }
             }
-            input, textarea {
-                padding: 10px 15px;
-                width: 100%;
-                border: 1px solid $color-black;
-                background-color: $color-white;
+            button {
+                margin: 0 auto;
+                padding: 10px 20px;
+                color: $color-white;
+                background-color: $color-black;
                 border-radius: 0;
                 -webkit-appearance: none;
-                transition: all .3s ease;
-                &:focus {
-                    outline: none;
-                    box-shadow: 5px 5px #d8d8d8;
-                }
-                &.error {
-                    box-shadow: 3px 3px #bc8787;
-                }
+                border: 2px solid;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: 500;
             }
-            textarea {
-                height: 200px;
-            }
-        }
-        button {
-            padding: 10px 30px;
-            background-color: $color-black;
-            color: $color-white;
-            border: none;
-            border-radius: 0;
-            -webkit-appearance: none;
-            text-transform: uppercase;
         }
     }
 }
 /** 9. End Contact **/
 
 /** 10 Start Footer **/
+.footer {
+    background-color: #282828;
+    .footer__logo {
+        font-weight: 100;
+        font-size: 100px;
+        font-family: "Bungee Hairline",cursive;
+        color: #FFF;
+        text-align: center;
+    }
+    .footer__social--list {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        li {
+            list-style: none;
+            a {
+                padding: 0 10px;
+                color: $color-white;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 13px;
+            }
+        }
+    }
+
+}
 /** 10. End Footer **/
 
 /** 11. Start Single Page **/

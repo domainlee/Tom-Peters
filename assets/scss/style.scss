@@ -615,12 +615,13 @@ img {
             padding: 0 15px 30px;
             width: 33.3333%;
             .my-blog__items--inner {
+                padding: 20px;
                 height: 100%;
                 transition: all .5s ease;
                 cursor: pointer;
-                @extend .bg-grey;
+                border: 1px solid $color-black;
                 .my-blog__items--content {
-                    padding: 30px 30px 40px;
+                    padding: 30px;
                     text-align: center;
                     .entry {
                         margin: 0 0 15px;

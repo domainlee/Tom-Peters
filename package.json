@@ -8,8 +8,9 @@
     ]
   },
   "scripts": {
+    "clean": "rm -rf assets/build/css/main.bundle.js",
     "watch": "webpack --mode=development --watch --config webpack-config.js",
-    "build": "webpack --mode=production --config webpack-config.js"
+    "build": "webpack --mode=production --config webpack-config.js && npm run clean"
   },
   "author": "",
   "license": "ISC",

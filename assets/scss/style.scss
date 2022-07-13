@@ -212,32 +212,30 @@ img {
 /** 4. Start About me **/
 .about-me {
     height: 100vh;
-    background-image: url('../img/bg_main.png');
     background-size: 3px;
     .about-me__inner {
         background-color: $color-white;
-        padding: 50px;
         height: 100%;
         display: flex;
         align-items: center;
         position: relative;
-        .header__avatar {
+        .about-me__avatar {
             margin: 0 auto 50px !important;
             width: 100px;
             height: 100px;
         }
-        .header__intro {
+        .about-me__intro {
             text-align: center;
             font-size: 18px;
             color: #181818;
             padding: 0 150px;
         }
-        .header__name {
+        .about-me__name {
             margin: 50px 0 0;
             text-transform: uppercase;
             font-size: 14px !important;
         }
-        .header__position {
+        .about-me__position {
             font-size: 14px;
         }
     }
@@ -494,7 +492,6 @@ img {
                 margin: 0;
                 position: relative;
                 background-size: cover;
-                filter: grayscale(100%);
                 transition: all 1s ease;
                 .product__content {
                     text-align: center;
@@ -502,16 +499,25 @@ img {
                     flex-direction: column;
                     justify-content: center;
                     position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background-color: #0000004d;
-                    color: $color-white;
-                    transform: scale(1);
-                    transition: all 1s ease;
+                    top: 15px;
+                    bottom: 15px;
+                    left: 15px;
+                    right: 15px;
+                    background-color: rgb(255 255 255 / 90%);
+                    color: $color-black;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                    width: auto;
+                    height: auto;
                     .product__name {
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                    }
+                    .product__score {
+                        color: #919191;
                         font-family: "Noto Serif Display",serif;
+                        font-style: italic;
                     }
                 }
                 .product__view {
@@ -519,31 +525,29 @@ img {
                     align-items: center;
                     justify-content: center;
                     color: $color-white;
-                    transform: scale(0);
                     transition: all 1s ease;
                     a {
-                        width: 50px;
-                        height: 50px;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 50%;
-                        font-size: 16px;
-                        background-color: $color-white;
+                        padding: 5px 0;
                         color: $color-black;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 13px;
+                        letter-spacing: 1px;
+                        border-bottom: 1px solid;
+                        &:before {
+                            content: '';
+                            margin: 10px auto 20px;
+                            height: 40px;
+                            width: 1px;
+                            display: block;
+                            background-color: $color-black;
+                        }
                     }
                 }
             }
             &:hover {
-                figure {
-                    filter: grayscale(0%);
-                }
                 .product__content {
-                    background-color: transparent;
-                    transform: scale(0);
-                }
-                .product__view {
-                    transform: scale(1);
+                    opacity: 1;
                 }
             }
         }
@@ -657,7 +661,7 @@ img {
 
                 }
                 &:hover {
-                    box-shadow: 10px 10px #dcdcdc;
+                    box-shadow: 10px 10px #d8d8d8;
                 }
             }
         }
@@ -839,6 +843,11 @@ img {
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 font-weight: 500;
+                transition: all 0.1s ease;
+                &:hover {
+                    background-color: $color-white;
+                    color: $color-black
+                }
             }
         }
     }

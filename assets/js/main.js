@@ -64,7 +64,6 @@
     };
 
     var owlCarousel = function() {
-        // SINGLE PAGE - Gallery //
         $('.my-client__js').owlCarousel({
             loop: true,
             margin: 0,
@@ -164,11 +163,13 @@
                 return false;
             },
             rules: {
+                title: "required",
                 name: "required",
                 email: {required : true, email: true},
                 message: "required",
             },
             messages: {
+                title: "Please specify title",
                 name: "Please specify your name",
                 email: "Please specify your email",
                 message: "Please enter message",

@@ -223,6 +223,12 @@ img {
             margin: 0 auto 50px !important;
             width: 100px;
             height: 100px;
+            position: relative;
+            overflow: hidden;
+            background-position: top center;
+            &.is-on {
+
+            }
         }
         .about-me__intro {
             text-align: center;
@@ -391,6 +397,7 @@ img {
             text-align: center;
             i {
                 font-size: 38px;
+                color: $color-black;
             }
             .my-service__title {
                 margin: 15px 0 20px;
@@ -526,7 +533,19 @@ img {
                     justify-content: center;
                     color: $color-white;
                     transition: all 1s ease;
+                    height: 95px;
+                    flex-direction: column;
+                    &:before {
+                        content: '';
+                        margin: 10px auto 20px;
+                        height: 0;
+                        width: 1px;
+                        display: block;
+                        background-color: $color-black;
+                        transition: height 1s ease;
+                    }
                     a {
+                        margin: auto 0 0;
                         padding: 5px 0;
                         color: $color-black;
                         text-transform: uppercase;
@@ -534,20 +553,17 @@ img {
                         font-size: 13px;
                         letter-spacing: 1px;
                         border-bottom: 1px solid;
-                        &:before {
-                            content: '';
-                            margin: 10px auto 20px;
-                            height: 40px;
-                            width: 1px;
-                            display: block;
-                            background-color: $color-black;
-                        }
                     }
                 }
             }
             &:hover {
                 .product__content {
                     opacity: 1;
+                }
+                .product__view {
+                    &:before {
+                        height: 40px;
+                    }
                 }
             }
         }

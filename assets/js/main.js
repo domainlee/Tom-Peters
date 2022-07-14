@@ -222,6 +222,9 @@
         button_load.click(function () {
             post_per_page = ( post_per_page + SETTING.LOAD_POST <= total_count ) ? post_per_page + SETTING.LOAD_POST : total_count;
             $('.my-blog__items:lt('+post_per_page+')').fadeIn().addClass('is-on');
+            if(post_per_page == total_count) {
+                $(this).text('End Post');
+            }
         });
     }
 

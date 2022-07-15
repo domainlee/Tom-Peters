@@ -6,23 +6,7 @@
             $('body').delay(666);
             animation();
             skill();
-            typing();
         });
-    }
-
-    var typing = function () {
-        var elements = document.getElementsByClassName('header__type--js');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TextType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".header__type--js > .wrap { border-right: 0.08em solid #6f809b}";
-        document.body.appendChild(css);
     }
 
     var nav = function () {
@@ -227,42 +211,38 @@
             }
         });
     }
-
-    var TextType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    }
-
-    TextType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1)
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
+    
+    var dark = function ( ) {
+        // init
+        var button = $('.button-dark-mode');
+        let theme = localStorage.getItem('data-theme');
+        if(theme){
+            $('html').attr('data-theme', theme);
         }
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-        if (this.isDeleting) { delta /= 2; }
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-    }
+        var default_theme = $('html').attr('data-theme');
+        localStorage.setItem("data-theme", default_theme);
 
+        // action
+        button.click(function () {
+            let theme = localStorage.getItem('data-theme');
+            if(theme === 'dark') {
+                to_light();
+            } else {
+                to_dark();
+            }
+        });
+
+        // to light
+        function to_light(){
+            $('html').attr("data-theme", "light");
+            localStorage.setItem("data-theme", "light")
+        }
+        // to dark
+        function to_dark(){
+            $('html').attr("data-theme", "dark");
+            localStorage.setItem("data-theme", "dark")
+        }
+    }
 
     $(document).ready(function() {
         window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
@@ -274,6 +254,7 @@
         popup();
         form();
         skill();
+        dark();
 
         component_blog();
         $(document).on( 'scroll', function(){

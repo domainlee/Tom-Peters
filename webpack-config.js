@@ -15,7 +15,6 @@ const config = {
             JS_DIR + '/jquery.magnific-popup.js',
             JS_DIR + '/modernizr-3.11.2.min.js',
             JS_DIR + '/jquery.lazy.min.js',
-            JS_DIR + '/particles.min.js',
             JS_DIR + '/main.js',
         ],
         '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss']

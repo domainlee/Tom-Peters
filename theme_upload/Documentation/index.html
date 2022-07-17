@@ -72,7 +72,8 @@
 		<li class="nav-item"><a class="nav-link" href="#tom-peters_html_structure">HTML Structure</a></li>
         <li class="nav-item"><a class="nav-link" href="#tom-peters_css_files_and_table_contents">CSS Files and Table of contents</a></li>
         <li class="nav-item"><a class="nav-link" href="#tom-peters_javascripts">Java Scripts</a></li>
-		<li class="nav-item"><a class="nav-link" href="#tom-peters_fonts">Used Fonts</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tom-peters_php">PHP</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tom-peters_fonts">Used Fonts</a></li>
         <li class="nav-item"><a class="nav-link" href="#tom-peters_source_credits">Source & Credits</a></li>
         <li class="nav-item"><a class="nav-link" href="#tom-peters_development">Development</a></li>
 		<li class="nav-item"><a class="nav-link" href="#tom-peters_conclusion">Conclusion</a></li>
@@ -149,7 +150,7 @@
             <pre>
                 <code class="html">
 &lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;html lang=&quot;en&quot; data-theme=&quot;dark&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
@@ -163,51 +164,60 @@
     &lt;!--- end style ---&gt;
 
 &lt;/head&gt;
-&lt;body&gt;
-
+&lt;body class=&quot;home&quot;&gt;
 
     &lt;!-- start loading--&gt;
     &lt;div class=&quot;loading&quot;&gt;&lt;/div&gt;
     &lt;!-- end loading--&gt;
 
     &lt;!-- start header--&gt;
-    &lt;section class=&quot;header__fix&quot;&gt;&lt;/section&gt;
-    &lt;section class=&quot;header&quot;&gt;&lt;/section&gt;
+    &lt;section class=&quot;header w-25 d-flex align-content-center flex-column lazy&quot;&gt;&lt;/section&gt;
     &lt;!-- end header--&gt;
 
     &lt;!-- start about me --&gt;
-    &lt;section id=&quot;about-me&quot; class=&quot;pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;about-me&quot; class=&quot;about-me mb-0 p-50 w-75 offset-0 offset-lg-3 bg-grey&quot; &gt;&lt;/section&gt;
     &lt;!-- end about me --&gt;
 
     &lt;!-- start my resume --&gt;
-    &lt;section id=&quot;my-resume&quot; class=&quot;my-resume pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;my-resume&quot; class=&quot;my-resume px-50  w-75 offset-0 offset-lg-3&quot;&gt;&lt;/section&gt;
     &lt;!-- end my resume --&gt;
 
+    &lt;!-- start my service --&gt;
+    &lt;section id=&quot;my-service&quot; class=&quot;my-service  px-50 w-75 offset-0 offset-lg-3 bg-grey&quot;&gt;&lt;/section&gt;
+    &lt;!-- end my service --&gt;
+
     &lt;!-- start my project --&gt;
-    &lt;section id=&quot;my-project&quot; class=&quot;my-project pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;my-project&quot; class=&quot;my-project  px-50 w-75 offset-0 offset-lg-3 &quot;&gt;&lt;/section&gt;
     &lt;!-- end my project --&gt;
 
     &lt;!-- start my client --&gt;
-    &lt;section id=&quot;my-client&quot; class=&quot;my-client pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;my-client&quot; class=&quot;my-client px-50  w-75 offset-0 offset-lg-3 bg-grey&quot;&gt;&lt;/section&gt;
     &lt;!-- start my client --&gt;
 
     &lt;!-- start my blog --&gt;
-    &lt;section id=&quot;my-blog&quot; class=&quot;my-blog pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;my-blog&quot; class=&quot;my-blog px-50 w-75 offset-0 offset-lg-3 &quot;&gt;&lt;/section&gt;
     &lt;!-- end my blog --&gt;
 
     &lt;!-- start contact --&gt;
-    &lt;section id=&quot;contact&quot; class=&quot;contact pt-5 pt-md-0 mb-0 mb-md-5&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;contact&quot; class=&quot;contact px-50 w-75 offset-0 offset-lg-3 bg-grey&quot;&gt;&lt;/section&gt;
     &lt;!-- end contact --&gt;
 
     &lt;!-- start footer --&gt;
-    &lt;section class=&quot;footer&quot;&gt;&lt;/section&gt;
+    &lt;section class=&quot;footer px-50 py-3 py-md-4 w-75 offset-0 offset-lg-3&quot;&gt;&lt;/section&gt;
     &lt;!-- end footer --&gt;
 
-    &lt;!--- start script bundle ---&gt;
+    &lt;!--- start script ---&gt;
     &lt;script src=&quot;assets/build/js/main.bundle.js&quot;&gt;&lt;/script&gt;
-    &lt;!--- end script bundle ---&gt;
+    &lt;!--- end script ---&gt;
 
 &lt;/body&gt;
+&lt;script&gt;
+    // setting paginator for blog
+    SETTING = {
+        POST_PER_PAGE: 6,
+        LOAD_POST: 2
+    }
+&lt;/script&gt;
 &lt;/html&gt;
                 </code>
             </pre>
@@ -264,15 +274,71 @@ Version: 1.0.0
             </ol>
         </section>
 		<hr class="divider">
+
+          <!-- PHP -->
+          <section id="tom-peters_php">
+              <h2>PHP</h2>
+              <p>To be able to use the feature we recommend running on PHP > 5.4.</p>
+              <p>In this template we have used PHP for blogview and contact.</p>
+              <p>How to configure blog details ?</p>
+              <pre>
+              <code>
+...
+&lt;!-- start item blog --&gt;
+    &lt;div class=&quot;my-blog__items&quot; data-viewport=&quot;opacity&quot;&gt;
+        &lt;div class=&quot;my-blog__items--inner&quot;&gt;
+            &lt;a class=&quot;my-blog__detail&quot; data-id=&quot;1&quot;&gt;
+                &lt;figure class=&quot;m-0 ratio ratio-4x3 lazy bg-cover&quot; data-src=&quot;assets/images/leone-venter-pVt9j3iWtPM-unsplash.jpg&quot;&gt;&lt;/figure&gt;
+                &lt;div class=&quot;my-blog__items--content&quot;&gt;
+                    &lt;h3&gt;How to Make Your Tech Last Longer&lt;/h3&gt;
+                    &lt;div class=&quot;entry&quot;&gt;
+                        &lt;span class=&quot;entry__category&quot;&gt;Travel&lt;/span&gt;
+                        &lt;span class=&quot;entry__date&quot;&gt;July 2, 2022&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;!-- end item blog --&gt;
+...
+              </code>
+            </pre>
+              <p>We use the "my-blog__detail" class to call an action, and the "data-id" attribute to call a post id, you can change the "data-id"</p>
+              <p>Below is a list of blog posts, used in the template </p>
+              <p><i>assets/php/blog_view.php</i></p>
+              <pre>
+                <code>
+$post = array(
+    '1' =&gt; array(
+        'id' =&gt; '1',
+        'title' =&gt; 'Facebook Said to Consider Banning Political Ads',
+        'date' =&gt; 'June 2, 2022',
+        'image' =&gt; 'assets/images/name.jpg',
+        'category' =&gt; 'Life',
+        'content' =&gt; 'Content html here'
+    ),
+    '2' =&gt; array(
+        'id' =&gt; '2',
+        'title' =&gt; 'Facebook Said to Consider Banning Political Ads',
+        'date' =&gt; 'June 2, 2022',
+        'image' =&gt; 'assets/images/name.jpg',
+        'category' =&gt; 'Social',
+        'content' =&gt; 'Content html here'
+    )
+);
+                </code>
+            </pre>
+          </section>
+          <hr class="divider">
 		
 		<!-- Fonts -->
         <section id="tom-peters_fonts">
             <h2>Fonts</h2>
             <p>I Have Used Two Variations of Fonts in this HTML Template</p>
-            <img src="assets/images/abril-fatface.png" />
-            <p>Fonts used in this Template is the standard <strong><a href="https://fonts.google.com/specimen/Abril+Fatface?query=Abril+" target="_blank">Free fonts Abril Fatface</a></strong></p>
-            <img src="assets/images/roboto.png" />
-            <p>Fonts used in this Template is the standard <strong><a href="https://fonts.google.com/specimen/Roboto?query=roboto&preview.text=Roboto&preview.text_type=custom" target="_blank">Free fonts Roboto</a></strong></p>
+            <img src="assets/images/red-hat-display.png" />
+            <p>Fonts used in this Template is the standard <strong><a href="https://fonts.google.com/specimen/Red+Hat+Display?query=Red+Hat+Display" target="_blank">Free fonts Red Hat Display</a></strong></p>
+            <img src="assets/images/bungee-hairline.png" />
+            <p>Fonts used in this Template is the standard <strong><a href="https://fonts.google.com/specimen/Bungee+Hairline?query=Bungee+Hairline" target="_blank">Free fonts Bungee Hairline</a></strong></p>
         </section>
 		<hr class="divider">
 

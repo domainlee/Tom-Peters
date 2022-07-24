@@ -8,7 +8,7 @@
     ]
   },
   "scripts": {
-    "clean": "rm -rf assets/build/css/main.bundle.js",
+    "clean": "rm -rf assets/build/css/main.bundle.js && rm -rf assets/build/css/style-box.bundle.js && rm -rf assets/build/css/style-gallery.bundle.js",
     "watch": "webpack --mode=development --watch --config webpack-config.js",
     "build": "webpack --mode=production --config webpack-config.js && npm run clean"
   },

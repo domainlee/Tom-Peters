@@ -12,12 +12,15 @@ const config = {
         main: [
             NODE_MODULES + '/owl.carousel/dist/owl.carousel.min.js',
             JS_DIR + '/jquery.validate.min.js',
+            JS_DIR + '/masonry.pkgd.min.js',
             JS_DIR + '/jquery.magnific-popup.js',
             JS_DIR + '/modernizr-3.11.2.min.js',
             JS_DIR + '/jquery.lazy.min.js',
             JS_DIR + '/main.js',
         ],
-        '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss']
+        '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-box': [CSS_DIR + '/main-box.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-gallery': [CSS_DIR + '/main-gallery.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
     },
     output : {
         filename : '[name].bundle.js',

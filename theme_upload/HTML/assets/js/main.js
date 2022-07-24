@@ -18,6 +18,24 @@
         });
     }
 
+    var slider = function () {
+        var item_image = $('.hero__images figure');
+        if(item_image.length){
+            var images = item_image.attr('data-images').split(",");
+            var index = 0;
+            var time = 5000;
+            var updateImage = function() {
+                if (index >= images.length) {
+                    index = 0;
+                }
+                item_image.attr('style', 'background-image: url('+images[index]+')');
+                index++;
+            }
+            updateImage();
+            setInterval(updateImage, time);
+        }
+    }
+
     var nav = function () {
         var button_nav = $('.header__button-menu');
         button_nav.click(function (e) {
@@ -27,6 +45,20 @@
 
         $('.header__button--close').click(function () {
             $('body').removeClass('nav-open-js');
+        });
+
+        $(window).scroll(function() {
+            var scrollTop = $('html').scrollTop();
+            if(scrollTop >= 70) {
+                $('body').addClass('head__fix');
+            } else {
+                $('body').removeClass('head__fix');
+            }
+            if(scrollTop >= 600) {
+                $('body').addClass('head__show');
+            } else {
+                $('body').removeClass('head__show');
+            }
         });
 
         if(isMobile){
@@ -72,6 +104,29 @@
                 }
             }
         });
+
+        $('.gallery-side--js').owlCarousel({
+            loop: true,
+            margin: 0,
+            dots: false,
+            nav: true,
+            lazyLoad: true,
+            autoplay: true,
+            items: 1,
+            navText : ["<i class='icofont-thin-left'></i>","<i class='icofont-thin-right'></i>"],
+            responsive: {
+                0: {
+                    nav: false,
+                },
+                480: {
+                    nav: false,
+                },
+                768: {
+                    nav: true,
+                }
+            }
+        });
+
     };
 
     var skill = function () {
@@ -112,6 +167,7 @@
         if($('.home').length) {
             return new bootstrap.ScrollSpy(document.body,{
                 target: ".header__menu",
+                offset: 150
             });
         }
     }
@@ -250,6 +306,7 @@
     $(document).ready(function() {
         window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
         loading();
+        slider();
         nav();
         lazy();
         owlCarousel();

@@ -21,6 +21,7 @@ const config = {
         '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-box': [CSS_DIR + '/main-box.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-gallery': [CSS_DIR + '/main-gallery.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-load-animation': [CSS_DIR + '/main-load-animation.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
     },
     output : {
         filename : '[name].bundle.js',

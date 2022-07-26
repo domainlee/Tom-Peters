@@ -311,6 +311,9 @@ img {
 
 /** 3. Start Hero **/
 .hero {
+    -webkit-animation: bg-move 50s infinite;
+    animation: bg-move 50s infinite;
+    background-size: 105%;
     .hero__inner {
         display: flex;
         margin: auto;
@@ -323,15 +326,25 @@ img {
             margin: 0 0 -100px;
             padding: 0 50px;
             width: 50%;
+            transition: all 1s ease;
+            opacity: 0;
+            transform: translate(0px, 50px);
             figure {
                 background-position: center;
                 transition: all 0.5s ease;
+            }
+            &.is-on {
+                opacity: 1;
+                transform: translate(0px, 0);
             }
         }
         .hero__right {
             margin: 0 0 -200px;
             padding: 0 50px;
             width: 50%;
+            transition: all 1s ease;
+            opacity: 0;
+            transform: translate(0px, 50px);
             .hero__content {
                 background-color: var(--bg);
                 height: 100%;
@@ -350,6 +363,7 @@ img {
                     padding: 10px 50px;
                     text-transform: uppercase;
                     background: #888;
+                    border: 2px solid #888;
                     letter-spacing: 1px;
                     display: inline-block;
                     font-size: 12px;
@@ -357,9 +371,56 @@ img {
                     flex: 0;
                     width: 200px;
                     color: var(--text-selection);
+                    transition: all 0.5s ease;
+                    &:hover {
+                        background-color: var(--bg);
+                        color: var(--text-main);
+                        border: 2px solid var(--text-main);
+                    }
                 }
             }
+            &.is-on {
+                opacity: 1;
+                transform: translate(0px, 0);
+            }
         }
+    }
+}
+
+@-webkit-keyframes bg-move {
+    0% {
+        background-position: left;
+        background-size: 102%;
+    }
+    30% {
+        background-position: right;
+        background-size: 105%;
+    }
+    60% {
+        background-position: left;
+        background-size: 102%;
+    }
+    100% {
+        background-position: right;
+        background-size: 105%;
+    }
+}
+@keyframes bg-move {
+    0% {
+        background-position: left;
+        background-size: 102%;
+    }
+    30% {
+        background-position: right;
+        background-size: 105%;
+    }
+    60% {
+        background-position: left;
+        background-size: 102%;
+    }
+    100% {
+        background-position: right;
+        background-size: 105%;
     }
 }
 /** 3. Start Hero **/
@@ -391,11 +452,11 @@ img {
             z-index: -1;
             span {
                 opacity: 0;
-                transition: opacity 0.5s ease;
+                transition: opacity 0.3s ease;
                 z-index: -2;
                 @for $i from 1 through 6 {
                     &:nth-child(#{$i}) {
-                        transition-delay:(#{($i+1)*0.5s});
+                        transition-delay:(#{($i+1)*0.3s});
                     }
                 }
             }
@@ -411,12 +472,14 @@ img {
             font-size: 20px !important;
             color: var(--text-main);
             transition-delay: 2s;
-            transition: opacity 0.5s ease;
+            transition: all 1s ease;
+            transform: translate(0, 20px);
             opacity: 0;
             z-index: 2;
             position: relative;
             &.is-on {
                 opacity: 1;
+                transform: translate(0, 0);
             }
         }
         .about-me__intro {
@@ -426,23 +489,30 @@ img {
             color: var(--text-intro);
             padding: 0 150px;
             transition-delay: 2.5s;
-            transition: opacity 0.5s ease;
+            transition: all 1s ease;
+            transform: translate(0, 20px);
             opacity: 0;
             &.is-on {
                 opacity: 1;
+                transform: translate(0, 0);
             }
         }
         .about-me__position {
             font-size: 14px;
             color: var(--text-main);
             transition-delay: 3s;
-            transition: opacity 0.5s ease;
+            transition: all 1s ease;
             opacity: 0;
+            transform: translate(0, 20px);
             &.is-on {
                 opacity: 1;
+                transform: translate(0, 0);
             }
         }
     }
+
+
+
 }
 /** 4. End About me **/
 
@@ -473,6 +543,9 @@ img {
             padding: 15px;
             width: 33.33333%;
             position: relative;
+            transition: all 1s ease;
+            transform: translate(0, 30px);
+            opacity: 0;
             .button-image {
                 position: absolute;
                 top: 15px;
@@ -494,6 +567,10 @@ img {
                 &:hover {
                     opacity: 1;
                 }
+            }
+            &.is-on {
+                transform: translate(0, 0);
+                opacity: 1;
             }
         }
     }
@@ -556,6 +633,10 @@ img {
                             font-weight: 500;
                             letter-spacing: 1px;
                             transform: translate(0, 0);
+                            display: inline-block;
+                            &:hover {
+                                transform: translate(0px, -2px);
+                            }
                         }
                     }
                 }
@@ -761,6 +842,15 @@ img {
                 width: 25%;
                 figure {
                     margin: 0;
+                    background-size: auto 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    transition: all 0.5s ease;
+                }
+                &:hover {
+                    figure {
+                        background-size: auto 105%;
+                    }
                 }
             }
         }

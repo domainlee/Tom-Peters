@@ -62,9 +62,13 @@
         });
 
         if(isMobile){
-            var header__navigation = $('.header__navigation');
+            var header__navigation = $('.header__navigation .nav-item');
             header__navigation.each(function () {
                 var button = $(this).find('a');
+                if(!button.hasClass('active')) {
+                    var section = button.attr('href');
+                    $(section).css('display', 'none');
+                }
                 button.click(function () {
                     setTimeout(function () {
                         $('body').removeClass('nav-open-js');

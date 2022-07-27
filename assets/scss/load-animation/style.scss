@@ -154,9 +154,9 @@ img {
 .p-50 {
     padding: 50px;
 }
-.px-50 {
-    padding-left: 50px;
-    padding-right: 50px;
+.px-30 {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .heading-default {
     margin: 0 0 30px;
@@ -383,7 +383,7 @@ img {
             text-align: center;
             font-size: 18px;
             color: var(--text-intro);
-            padding: 0 150px;
+            padding: 0 100px;
         }
         .about-me__name {
             margin: 50px 0 0;
@@ -549,7 +549,7 @@ img {
             .my-service__item {
                 margin: 0 0 30px;
                 padding: 0 15px;
-                width: 33.33333%;
+                width: 50%;
                 text-align: center;
                 color: var(--text-main);
                 i {
@@ -804,8 +804,8 @@ img {
                     cursor: pointer;
                     background-color: #f7f7f7;
                     .my-blog__items--content {
-                        margin: -50px 50px 0;
-                        padding: 50px;
+                        margin: -35px 35px 0;
+                        padding: 25px;
                         text-align: center;
                         background-color: #f7f7f7;
                         z-index: 2;

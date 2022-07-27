@@ -1,4 +1,8 @@
 @media (max-width: 1200px) {
+  .w-50 {
+    width: 100% !important;
+  }
+
   .header {
     .header_inner {
       .header__nav {
@@ -8,6 +12,40 @@
               padding: 20px 10px;
             }
           }
+        }
+      }
+    }
+  }
+  .about-me {
+    .about-me__inner {
+      .about-me__intro {
+        color: $color-white;
+      }
+      .about-me__name {
+        color: $color-white;
+      }
+      .about-me__position {
+        color: $color-white;
+      }
+    }
+  }
+  .about-avatar {
+    width: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #00000075;
+    }
+  }
+  .my-service {
+    .my-service__inner {
+      .my-service__list {
+        .my-service__item {
+          width: 33.33333%;
         }
       }
     }
@@ -293,6 +331,10 @@
 
   .header--fixed {
     height: 50px;
+  }
+
+  .about-avatar {
+    top: 50px;
   }
 
   .about-me {

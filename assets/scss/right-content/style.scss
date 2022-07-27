@@ -258,9 +258,6 @@ img {
     position: fixed;
     top: 0;
     transition: all 0.5s ease;
-    //.head__fix & {
-    //    top: -70px;
-    //}
     .head__show & {
         top: 0;
     }
@@ -310,7 +307,7 @@ img {
     position: fixed;
     top: 70px;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1066,6 +1063,7 @@ img {
 
 /** 11 Start Footer **/
 .footer {
+    position: relative;
     background-color: #282828;
     .footer__logo {
         font-weight: 100;

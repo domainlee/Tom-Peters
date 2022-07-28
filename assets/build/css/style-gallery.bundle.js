@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/scss/main-left-content.scss":
-/*!********************************************!*\
-  !*** ./assets/scss/main-left-content.scss ***!
-  \********************************************/
+/***/ "./assets/scss/main-gallery.scss":
+/*!***************************************!*\
+  !*** ./assets/scss/main-gallery.scss ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://Tom-Peters/./assets/scss/main-left-content.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://Tom-Peters/./assets/scss/main-gallery.scss?");
 
 /***/ }),
 
@@ -52,7 +52,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	__webpack_modules__["./assets/scss/main-left-content.scss"](0, {}, __webpack_require__);
+/******/ 	__webpack_modules__["./assets/scss/main-gallery.scss"](0, {}, __webpack_require__);
 /******/ 	var __webpack_exports__ = {};
 /******/ 	__webpack_modules__["./node_modules/font-awesome/scss/font-awesome.scss"](0, __webpack_exports__, __webpack_require__);
 /******/ 	

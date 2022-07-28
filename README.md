@@ -1,6 +1,6 @@
 <h2>Overview</h2>
 <p>
- <strong>Tom Peters</strong> - Is a template designed with a minimalist style. It’s a modern, creative, clean, professional, attractive personal template.
+ <strong>Tamal</strong> - Is a template designed with a minimalist style. It’s a modern, creative, clean, professional, attractive personal template.
 </p>
 <p>
  Template is developed on bootstrap 5.1.3, using webpack, scss optimized compress library.

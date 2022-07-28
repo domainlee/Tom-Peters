@@ -323,9 +323,12 @@ img {
             height: 100px;
             position: relative;
             overflow: hidden;
-            background-position: top center;
+            transition: all 1.2s ease;
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             &.is-on {
-
+                background-size: 110% 110%;
             }
         }
         .about-me__intro {

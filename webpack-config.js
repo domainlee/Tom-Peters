@@ -23,6 +23,7 @@ const config = {
         '../css/style-gallery': [CSS_DIR + '/main-gallery.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-left-content': [CSS_DIR + '/main-left-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-right-content': [CSS_DIR + '/main-right-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-boxed-right-content': [CSS_DIR + '/main-boxed-right-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
     },
     output : {
         filename : '[name].bundle.js',

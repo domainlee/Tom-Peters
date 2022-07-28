@@ -79,7 +79,8 @@
     var lazy = function () {
         $('.lazy').Lazy({
             effect: "fadeIn",
-            effectTime: 500
+            effectTime: 500,
+            appendScroll: $('.scroll')
         });
     };
 
@@ -166,10 +167,18 @@
 
     var scrollTo = function () {
         if($('.home').length) {
-            return new bootstrap.ScrollSpy(document.body,{
+            var body = new bootstrap.ScrollSpy(document.body,{
                 target: ".header__menu",
                 offset: 150
             });
+            return body;
+        }
+        if($('.home-brc').length) {
+            var scroll = new bootstrap.ScrollSpy($('.scroll'),{
+                target: ".header__menu",
+                offset: 150
+            });
+            return scroll;
         }
     }
 
@@ -305,6 +314,12 @@
     }
 
     $(document).ready(function() {
+        $(".scroll").trigger("scroll");
+
+        // $(window).load(function(){
+        //     $("html,body").trigger("scroll");
+        // });
+
         window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
         loading();
         slider();
@@ -317,8 +332,15 @@
         skill();
         component_blog();
         dark();
+
         $(document).on( 'scroll', function(){
             animation();
         });
+
+        $('.scroll').on( 'scroll', function(){
+            animation();
+        });
+
+
     });
 }());

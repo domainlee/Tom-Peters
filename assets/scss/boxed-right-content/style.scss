@@ -30,7 +30,6 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap');
 
 html {
-    scroll-padding-top: 70px;
     // init
     --text: #000000;
     --bg: #FFFFFF;
@@ -132,7 +131,7 @@ body {
 
 .boxed-right-content {
     overflow-y: scroll;
-    height: calc(100vh - 170px);
+    height: calc(100vh - 140px);
 }
 
 ::selection {
@@ -259,37 +258,50 @@ img {
     background-size: cover;
     background-position: center bottom;
     z-index: 5;
-    overflow: hidden;
-    background-color: var(--bg);
     left: 70px;
-    right: 70px;
-    position: fixed;
+    bottom: 70px;
     top: 70px;
+    right: 50%;
+    position: fixed;
     transition: all 0.5s ease;
-    .head__show & {
-        top: 70px;
-    }
     .header_inner {
-        height: 70px;
         .header__logo {
+            padding: 30px;
             font-weight: 100;
             font-size: 30px;
             font-family: 'Bungee Hairline', cursive;
+            color: $color-white;
         }
         .header__nav {
             .header__navigation {
                 li {
                     a {
-                        padding: 20px 15px;
+                        padding: 20px 30px;
                         font-weight: 400;
                         text-transform: uppercase;
                         font-size: 14px;
                         font-family: 'Red Hat Display', sans-serif;
-                        text-align: center;
                         position: relative;
-                        color: var(--text-header);
+                        color: #989898;
+                        &:after {
+                            content: '';
+                            width: 30%;
+                            height: 1px;
+                            background-color: #dfdfdf;
+                            display: block;
+                            position: absolute;
+                            left: -20%;
+                            bottom: 0;
+                            transition: all 0.5s ease;
+                            opacity: 0;
+                        }
                         &.active {
-                            color: var(--text-header-active);
+                            color: #dfdfdf;
+                            &:after {
+                                content: '';
+                                width: 120%;
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -297,19 +309,21 @@ img {
         }
         .button-dark-mode {
             padding: 5px 10px;
-            color: var(--text);
+            color: $color-white;
             cursor: pointer;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
+        .header__social {
+            padding: 0 30px;
         }
         .header__copywriter {
+            padding: 30px;
             font-size: 13px;
-            color: #999;
+            color: $color-white;
         }
     }
-}
-.header--fixed {
-    height: 70px;
-    width: 100%;
-    z-index: -1;
 }
 .about-avatar {
     position: fixed;
@@ -322,6 +336,15 @@ img {
     -webkit-animation: bg-move 300s infinite;
     animation: bg-move 300s infinite;
     background-size: auto 105%;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #00000042;
+    }
 }
 
 
@@ -366,7 +389,7 @@ img {
 
 /** 4. Start About me **/
 .about-me {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 140px);
     background-size: 3px;
     .about-me__inner {
         height: 100%;
@@ -1547,7 +1570,7 @@ body.my-blog__popup--js {
             justify-content: center;
             align-items: center;
             font-size: 14px;
-            color: var(--text);
+            color: $color-white;
             transition: all 0.3s ease;
             &:hover {
                 text-decoration: none;

@@ -120,9 +120,10 @@ html[data-theme='dark'] {
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-grey: #666666;
+$width-size: 70px;
 
 body {
-    padding: 70px;
+    padding: $width-size;
     font-weight: 300;
     background-color: $color-black;
     font-family: 'Red Hat Display', sans-serif;
@@ -258,15 +259,15 @@ img {
     background-size: cover;
     background-position: center bottom;
     z-index: 5;
-    left: 70px;
-    bottom: 70px;
-    top: 70px;
+    left: $width-size;
+    bottom: $width-size;
+    top: $width-size;
     right: 50%;
     position: fixed;
     transition: all 0.5s ease;
     .header_inner {
         .header__logo {
-            padding: 30px;
+            padding: 50px;
             font-weight: 100;
             font-size: 30px;
             font-family: 'Bungee Hairline', cursive;
@@ -276,10 +277,10 @@ img {
             .header__navigation {
                 li {
                     a {
-                        padding: 20px 30px;
+                        padding: 20px 50px;
                         font-weight: 400;
                         text-transform: uppercase;
-                        font-size: 14px;
+                        font-size: 12px;
                         font-family: 'Red Hat Display', sans-serif;
                         position: relative;
                         color: #989898;
@@ -287,7 +288,7 @@ img {
                             content: '';
                             width: 30%;
                             height: 1px;
-                            background-color: #dfdfdf;
+                            background-color: $color-white;
                             display: block;
                             position: absolute;
                             left: -20%;
@@ -296,7 +297,7 @@ img {
                             opacity: 0;
                         }
                         &.active {
-                            color: #dfdfdf;
+                            color: $color-white;
                             &:after {
                                 content: '';
                                 width: 120%;
@@ -312,24 +313,24 @@ img {
             color: $color-white;
             cursor: pointer;
             position: absolute;
-            right: 30px;
-            top: 30px;
+            right: 50px;
+            top: 50px;
         }
         .header__social {
             padding: 0 30px;
         }
         .header__copywriter {
-            padding: 30px;
+            padding: 50px;
             font-size: 13px;
-            color: $color-white;
+            color: #989898;
         }
     }
 }
 .about-avatar {
     position: fixed;
-    top: 70px;
-    bottom: 70px;
-    left: 70px;
+    top: $width-size;
+    bottom: $width-size;
+    left: $width-size;
     width: calc(50% - 70px);
     background-position: center;
     background-repeat: no-repeat;

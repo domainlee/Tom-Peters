@@ -71,6 +71,7 @@ html {
     --border-dot: #000000;
     --border-dot-active: #000000;
     --bg-blockquote: #f2f2f2;
+    --bg-nav-active: #636363;
 }
 
 html[data-theme='dark'] {
@@ -115,6 +116,7 @@ html[data-theme='dark'] {
     --border-dot: #e1e1e1;
     --border-dot-active: #444444;
     --bg-blockquote: #565656;
+    --bg-nav-active: #FFFFFF;
 }
 
 $color-white: #FFFFFF;

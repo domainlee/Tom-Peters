@@ -162,9 +162,15 @@
             if(that.attr('data-viewport') != '') {
                 that.addClass(that.attr('data-viewport'));
                 if(isInViewport(that)) {
+                    var time = 200;
+                    if(isMobile() || that.attr('data-delay-mobile')){
+                        time = that.attr('data-delay-mobile');
+                    } else if(that.attr('data-delay')) {
+                        time = that.attr('data-delay');
+                    }
                     setInterval(function(){
                         that.addClass('is-on');
-                    }, that.attr('data-delay') ? that.attr('data-delay'):200);
+                    }, time);
                 }
             }
         });

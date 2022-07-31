@@ -18,6 +18,12 @@
         });
     }
 
+    var loadingMobile = function () {
+        $('.loading').css('display', 'none');
+        animation();
+        skill();
+    }
+
     var slider = function () {
         var item_image = $('.hero__images figure');
         if(item_image.length){
@@ -320,7 +326,11 @@
 
     $(document).ready(function() {
         window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
-        loading();
+        if(!isMobile()) {
+            loading();
+        } else {
+            loadingMobile();
+        }
         slider();
         nav();
         lazy();
@@ -339,7 +349,6 @@
         $('.scroll').on( 'scroll', function(){
             animation();
         });
-
 
     });
 }());

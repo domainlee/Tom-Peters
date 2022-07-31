@@ -19,11 +19,11 @@ const config = {
             JS_DIR + '/main.js',
         ],
         '../css/main': [CSS_DIR + '/main.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
-        '../css/style-box': [CSS_DIR + '/main-box.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-wide': [CSS_DIR + '/main-wide.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-gallery': [CSS_DIR + '/main-gallery.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-left-content': [CSS_DIR + '/main-left-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
         '../css/style-right-content': [CSS_DIR + '/main-right-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
-        '../css/style-boxed-right-content': [CSS_DIR + '/main-boxed-right-content.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
+        '../css/style-boxed': [CSS_DIR + '/main-boxed.scss', NODE_MODULES + '/font-awesome/scss/font-awesome.scss'],
     },
     output : {
         filename : '[name].bundle.js',

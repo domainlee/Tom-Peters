@@ -1,5 +1,5 @@
 /*
-Theme Name: Tom-Peters
+Theme Name: Tamal
 Author: domainlee
 Support: domainlee.niit@gmail.com
 Description: Template personal for blog , my cv, resume ...
@@ -30,7 +30,6 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap');
 
 html {
-    scroll-padding-top: 0;
     // init
     --text: #000000;
     --bg: #FFFFFF;
@@ -72,6 +71,7 @@ html {
     --border-dot: #000000;
     --border-dot-active: #000000;
     --bg-blockquote: #f2f2f2;
+    --bg-nav-active: #636363;
 }
 
 html[data-theme='dark'] {
@@ -116,18 +116,27 @@ html[data-theme='dark'] {
     --border-dot: #e1e1e1;
     --border-dot-active: #444444;
     --bg-blockquote: #565656;
+    --bg-nav-active: #FFFFFF;
 }
 
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-grey: #666666;
+$width-size: 70px;
 
 body {
+    padding: $width-size;
     font-weight: 300;
-    background-color: $color-white;
+    background-color: $color-black;
     font-family: 'Red Hat Display', sans-serif;
     transition: all 0.5s ease;
 }
+
+.boxed-right-content {
+    overflow-y: scroll;
+    height: calc(100vh - 140px);
+}
+
 ::selection {
     background: var(--bg-selection);
     color: var(--text-selection);
@@ -154,9 +163,9 @@ img {
 .p-50 {
     padding: 50px;
 }
-.px-50 {
-    padding-left: 50px;
-    padding-right: 50px;
+.px-30 {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .heading-default {
     margin: 0 0 30px;
@@ -252,39 +261,50 @@ img {
     background-size: cover;
     background-position: center bottom;
     z-index: 5;
-    overflow: hidden;
-    background-color: var(--bg);
-    width: 100%;
+    left: $width-size;
+    bottom: $width-size;
+    top: $width-size;
+    right: 50%;
     position: fixed;
-    top: 0;
     transition: all 0.5s ease;
-    .head__fix & {
-        top: -70px;
-    }
-    .head__show & {
-        top: 0;
-    }
     .header_inner {
-        height: 70px;
         .header__logo {
+            padding: 50px;
             font-weight: 100;
             font-size: 30px;
             font-family: 'Bungee Hairline', cursive;
+            color: $color-white;
         }
         .header__nav {
             .header__navigation {
                 li {
                     a {
-                        padding: 20px 15px;
+                        padding: 20px 50px;
                         font-weight: 400;
                         text-transform: uppercase;
-                        font-size: 14px;
+                        font-size: 12px;
                         font-family: 'Red Hat Display', sans-serif;
-                        text-align: center;
                         position: relative;
-                        color: var(--text-header);
+                        color: #989898;
+                        &:after {
+                            content: '';
+                            width: 30%;
+                            height: 1px;
+                            background-color: $color-white;
+                            display: block;
+                            position: absolute;
+                            left: -20%;
+                            bottom: 0;
+                            transition: all 0.5s ease;
+                            opacity: 0;
+                        }
                         &.active {
-                            color: var(--text-header-active);
+                            color: $color-white;
+                            &:after {
+                                content: '';
+                                width: 120%;
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -292,25 +312,87 @@ img {
         }
         .button-dark-mode {
             padding: 5px 10px;
-            color: var(--text);
+            color: $color-white;
             cursor: pointer;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+        .header__social {
+            padding: 0 30px;
         }
         .header__copywriter {
+            padding: 50px;
             font-size: 13px;
-            color: #999;
+            color: #989898;
         }
     }
 }
-.header--fixed {
-    height: 70px;
-    width: 100%;
-    z-index: -1;
+.about-avatar {
+    position: fixed;
+    top: $width-size;
+    bottom: $width-size;
+    left: $width-size;
+    width: calc(50% - 70px);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-animation: bg-move 300s infinite;
+    animation: bg-move 300s infinite;
+    background-size: auto 105%;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #00000042;
+    }
 }
+
+
+@-webkit-keyframes bg-move {
+    0% {
+        background-position: left;
+        background-size: auto 105%;
+    }
+    30% {
+        background-position: right;
+        background-size: auto 102%;
+    }
+    60% {
+        background-position: left;
+        background-size: auto 105%;
+    }
+    100% {
+        background-position: right;
+        background-size: auto 102%;
+    }
+}
+@keyframes bg-move {
+    0% {
+        background-position: left;
+        background-size: auto 105%;
+    }
+    30% {
+        background-position: right;
+        background-size: auto 102%;
+    }
+    60% {
+        background-position: left;
+        background-size: auto 105%;
+    }
+    100% {
+        background-position: right;
+        background-size: auto 102%;
+    }
+}
+
 /** 3. End Header **/
 
 /** 4. Start About me **/
 .about-me {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 140px);
     background-size: 3px;
     .about-me__inner {
         height: 100%;
@@ -323,19 +405,16 @@ img {
             height: 100px;
             position: relative;
             overflow: hidden;
-            transition: all 1.2s ease;
-            background-position: center;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background-position: top center;
             &.is-on {
-                background-size: 110% 110%;
+
             }
         }
         .about-me__intro {
             text-align: center;
             font-size: 18px;
             color: var(--text-intro);
-            padding: 0 150px;
+            padding: 0 100px;
         }
         .about-me__name {
             margin: 50px 0 0;
@@ -501,7 +580,7 @@ img {
             .my-service__item {
                 margin: 0 0 30px;
                 padding: 0 15px;
-                width: 33.33333%;
+                width: 50%;
                 text-align: center;
                 color: var(--text-main);
                 i {
@@ -630,13 +709,14 @@ img {
                         height: auto;
                         .product__name {
                             text-transform: uppercase;
-                            font-size: 18px;
+                            font-size: 16px;
                             letter-spacing: 1px;
                         }
                         .product__score {
                             color: #919191;
                             font-family: "Noto Serif Display",serif;
                             font-style: italic;
+                            font-size: 14px;
                         }
                     }
                     .product__view {
@@ -645,11 +725,11 @@ img {
                         justify-content: center;
                         color: $color-white;
                         transition: all 1s ease;
-                        height: 95px;
+                        height: 80px;
                         flex-direction: column;
                         &:before {
                             content: '';
-                            margin: 10px auto 20px;
+                            margin: 10px auto;
                             height: 0;
                             width: 1px;
                             display: block;
@@ -756,8 +836,8 @@ img {
                     cursor: pointer;
                     background-color: #f7f7f7;
                     .my-blog__items--content {
-                        margin: -50px 50px 0;
-                        padding: 50px;
+                        margin: -35px 35px 0;
+                        padding: 25px;
                         text-align: center;
                         background-color: #f7f7f7;
                         z-index: 2;
@@ -1018,6 +1098,7 @@ img {
 
 /** 11 Start Footer **/
 .footer {
+    position: relative;
     background-color: #282828;
     .footer__logo {
         font-weight: 100;
@@ -1492,7 +1573,7 @@ body.my-blog__popup--js {
             justify-content: center;
             align-items: center;
             font-size: 14px;
-            color: var(--text);
+            color: $color-white;
             transition: all 0.3s ease;
             &:hover {
                 text-decoration: none;

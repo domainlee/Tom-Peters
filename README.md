@@ -60,5 +60,5 @@
 <p><strong>You may get the pictures from Unsplash (FREE)</strong></p>
 
 <h2>Change Logs</h2>
-<p><strong>24 July 22 </strong> – v1.0</p>
+<p><strong>31 July 22 </strong> – v1.0</p>
 <pre>--- Initial Released --- </pre>

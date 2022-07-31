@@ -77,11 +77,18 @@
     }
 
     var lazy = function () {
-        $('.lazy').Lazy({
-            effect: "fadeIn",
-            effectTime: 500,
-            appendScroll: $('.scroll')
-        });
+        if($('.scroll').length) {
+            $('.lazy').Lazy({
+                effect: "fadeIn",
+                effectTime: 500,
+                appendScroll: $('.scroll')
+            });
+        } else {
+            $('.lazy').Lazy({
+                effect: "fadeIn",
+                effectTime: 500,
+            });
+        }
     };
 
     var owlCarousel = function() {

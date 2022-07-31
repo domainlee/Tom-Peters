@@ -61,7 +61,7 @@
             }
         });
 
-        if(isMobile){
+        if(isMobile()){
             var header__navigation = $('.header__navigation');
             header__navigation.each(function () {
                 var button = $(this).find('a');
@@ -73,13 +73,22 @@
                 });
             });
         }
+
     }
 
     var lazy = function () {
-        $('.lazy').Lazy({
-            effect: "fadeIn",
-            effectTime: 500
-        });
+        if($('.scroll').length) {
+            $('.lazy').Lazy({
+                effect: "fadeIn",
+                effectTime: 500,
+                appendScroll: $('.scroll')
+            });
+        } else {
+            $('.lazy').Lazy({
+                effect: "fadeIn",
+                effectTime: 500,
+            });
+        }
     };
 
     var owlCarousel = function() {
@@ -166,6 +175,12 @@
     var scrollTo = function () {
         if($('.home').length) {
             return new bootstrap.ScrollSpy(document.body,{
+                target: ".header__menu",
+                offset: 150
+            });
+        }
+        if($('.home-brc').length) {
+            return new bootstrap.ScrollSpy($('.scroll'),{
                 target: ".header__menu",
                 offset: 150
             });
@@ -316,8 +331,15 @@
         skill();
         component_blog();
         dark();
+
         $(document).on( 'scroll', function(){
             animation();
         });
+
+        $('.scroll').on( 'scroll', function(){
+            animation();
+        });
+
+
     });
 }());

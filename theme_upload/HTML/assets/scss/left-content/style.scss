@@ -1,5 +1,5 @@
 /*
-Theme Name: Tom-Peters
+Theme Name: Tamal
 Author: domainlee
 Support: domainlee.niit@gmail.com
 Description: Template personal for blog , my cv, resume ...
@@ -30,6 +30,7 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap');
 
 html {
+    scroll-padding-top: 70px;
     // init
     --text: #000000;
     --bg: #FFFFFF;
@@ -71,7 +72,6 @@ html {
     --border-dot: #000000;
     --border-dot-active: #000000;
     --bg-blockquote: #f2f2f2;
-    --bg-nav-active: #636363;
 }
 
 html[data-theme='dark'] {
@@ -116,27 +116,18 @@ html[data-theme='dark'] {
     --border-dot: #e1e1e1;
     --border-dot-active: #444444;
     --bg-blockquote: #565656;
-    --bg-nav-active: #FFFFFF;
 }
 
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-grey: #666666;
-$width-size: 70px;
 
 body {
-    padding: $width-size;
     font-weight: 300;
-    background-color: $color-black;
+    background-color: $color-white;
     font-family: 'Red Hat Display', sans-serif;
     transition: all 0.5s ease;
 }
-
-.boxed-right-content {
-    overflow-y: scroll;
-    height: calc(100vh - 140px);
-}
-
 ::selection {
     background: var(--bg-selection);
     color: var(--text-selection);
@@ -261,50 +252,39 @@ img {
     background-size: cover;
     background-position: center bottom;
     z-index: 5;
-    left: $width-size;
-    bottom: $width-size;
-    top: $width-size;
-    right: 50%;
+    overflow: hidden;
+    background-color: var(--bg);
+    width: 100%;
     position: fixed;
+    top: 0;
     transition: all 0.5s ease;
+    //.head__fix & {
+    //    top: -70px;
+    //}
+    .head__show & {
+        top: 0;
+    }
     .header_inner {
+        height: 70px;
         .header__logo {
-            padding: 50px;
             font-weight: 100;
             font-size: 30px;
             font-family: 'Bungee Hairline', cursive;
-            color: $color-white;
         }
         .header__nav {
             .header__navigation {
                 li {
                     a {
-                        padding: 20px 50px;
+                        padding: 20px 15px;
                         font-weight: 400;
                         text-transform: uppercase;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-family: 'Red Hat Display', sans-serif;
+                        text-align: center;
                         position: relative;
-                        color: #989898;
-                        &:after {
-                            content: '';
-                            width: 30%;
-                            height: 1px;
-                            background-color: $color-white;
-                            display: block;
-                            position: absolute;
-                            left: -20%;
-                            bottom: 0;
-                            transition: all 0.5s ease;
-                            opacity: 0;
-                        }
+                        color: var(--text-header);
                         &.active {
-                            color: $color-white;
-                            &:after {
-                                content: '';
-                                width: 120%;
-                                opacity: 1;
-                            }
+                            color: var(--text-header-active);
                         }
                     }
                 }
@@ -312,42 +292,31 @@ img {
         }
         .button-dark-mode {
             padding: 5px 10px;
-            color: $color-white;
+            color: var(--text);
             cursor: pointer;
-            position: absolute;
-            right: 50px;
-            top: 50px;
-        }
-        .header__social {
-            padding: 0 30px;
         }
         .header__copywriter {
-            padding: 50px;
             font-size: 13px;
-            color: #989898;
+            color: #999;
         }
     }
 }
+.header--fixed {
+    height: 70px;
+    width: 100%;
+    z-index: -1;
+}
 .about-avatar {
     position: fixed;
-    top: $width-size;
-    bottom: $width-size;
-    left: $width-size;
-    width: calc(50% - 70px);
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    width: 50%;
     background-position: center;
     background-repeat: no-repeat;
     -webkit-animation: bg-move 300s infinite;
     animation: bg-move 300s infinite;
     background-size: auto 105%;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #00000042;
-    }
 }
 
 
@@ -392,7 +361,7 @@ img {
 
 /** 4. Start About me **/
 .about-me {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 70px);
     background-size: 3px;
     .about-me__inner {
         height: 100%;
@@ -1573,7 +1542,7 @@ body.my-blog__popup--js {
             justify-content: center;
             align-items: center;
             font-size: 14px;
-            color: $color-white;
+            color: var(--text);
             transition: all 0.3s ease;
             &:hover {
                 text-decoration: none;

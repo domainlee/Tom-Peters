@@ -1,5 +1,5 @@
 {
-  "name": "Tom-Peters",
+  "name": "Tamal",
   "version": "1.0.0",
   "description": "",
   "babel": {
@@ -8,7 +8,7 @@
     ]
   },
   "scripts": {
-    "clean": "rm -rf assets/build/css/main.bundle.js",
+    "clean": "rm -rf assets/build/css/*.js",
     "watch": "webpack --mode=development --watch --config webpack-config.js",
     "build": "webpack --mode=production --config webpack-config.js && npm run clean"
   },

@@ -1,110 +1,21 @@
 @media (max-width: 1200px) {
-  .w-50 {
-    width: 100% !important;
-  }
-
   .header {
-    padding: 0 15px;
-    right: 70px;
-    height: 70px;
-    background-color: var(--bg);
-    //background-color: #8d3030;
-    align-items: center;
-
     .header_inner {
-      flex: 1;
-      align-items: center;
-      .header__logo {
-        padding: 0;
-        color: var(--text);
-      }
       .header__nav {
         .header__navigation {
           li {
             a {
               padding: 20px 10px;
-              color: var(--text-header);
-              &:after {
-                content: '';
-                width: 1px;
-                height: 10px;
-                background-color: var(--bg-nav-active);
-                display: block;
-                margin: 0 auto;
-                position: absolute;
-                transition: all 0.5s ease;
-                opacity: 0;
-                left: 0;
-                right: 0;
-                bottom: inherit;
-                top: 50px;
-              }
-              &.active {
-                color: var(--text-header-active);
-                &:after {
-                  content: '';
-                  opacity: 1;
-                  width: 1px;
-                  height: 25px;
-                }
-              }
             }
           }
-        }
-      }
-
-      .button-dark-mode {
-        margin-left: auto;
-        position: inherit;
-        right: 0;
-        top: 0;
-        color: var(--text);
-      }
-    }
-  }
-  .about-me {
-    .about-me__inner {
-      .about-me__intro {
-        color: $color-white;
-      }
-      .about-me__name {
-        color: $color-white;
-      }
-      .about-me__position {
-        color: $color-white;
-      }
-    }
-  }
-  .about-avatar {
-    top: 140px;
-    width: calc(100% - 140px);
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #00000075;
-    }
-  }
-  .my-service {
-    .my-service__inner {
-      .my-service__list {
-        .my-service__item {
-          width: 33.33333%;
         }
       }
     }
   }
 }
 @media (max-width: 992px) {
-  $width-size: 50px;
   html {
     scroll-padding-top: 70px;
-  }
-  body {
-    padding: $width-size;
   }
   .nav-open-js {
     overflow: hidden;
@@ -112,14 +23,7 @@
   .w-75 {
     width: 100% !important;
   }
-  .boxed-right-content {
-    height: calc(100vh - 100px);
-  }
   .header {
-    right: $width-size;
-    left: $width-size;
-    top: $width-size;
-
     .header_inner {
       .header__button-menu {
         margin: 0 0 0 20px;
@@ -177,10 +81,10 @@
       }
       .header__nav {
         position: fixed;
-        right: $width-size;
-        left: $width-size;
-        top: 120px;
-        bottom: $width-size;
+        top: 70px;
+        bottom: 0;
+        left: 0;
+        right: 0;
         visibility: hidden;
         .header__navigation {
           z-index: 3;
@@ -191,7 +95,6 @@
             transform: translate(0, 5px);
             a {
               padding: 20px 12px;
-              text-align: center;
             }
             @for $i from 1 through 8 {
               &:nth-child(#{$i}) {
@@ -257,13 +160,6 @@
     &.w-25 {
       width: 100% !important;
     }
-  }
-  .about-avatar {
-    width: calc(100% - 100px);
-    right: $width-size;
-    left: $width-size;
-    top: $width-size;
-    bottom: $width-size;
   }
 
   .about-me {
@@ -397,10 +293,6 @@
 
   .header--fixed {
     height: 50px;
-  }
-
-  .about-avatar {
-    top: 50px;
   }
 
   .about-me {
